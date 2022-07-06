@@ -39,3 +39,7 @@ zrange staffs 0 10 withscores
 zremrangebyscore staffs 2 8
 zremrangebyrank staffs 2 8
 
+cassandra:
+
+create keyspace "company" with replication={'class':'SimpleStrategy','replication_factor':1};
+insert 
