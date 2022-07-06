@@ -11,3 +11,31 @@ db.cars.find({perf:{$in:[1,2,3,4,5,6,7,8,9,10]}})
 db.cars.update({perf:{$gt:5}},{$inc:{perf:+5}},{multi:true})
 db.cars.update({perf:{$gt:5}},{$mul:{perf:5}},{multi:true})
 db.cars.update({perf:{$gt:5}},{$set:{perf:5,carname:'benz'}},{multi:true})
+
+  Redis:
+set tik 50
+get tik
+append tik sachin
+decrby tik 5
+incrby tik 5
+setex karpagam 5 pass
+strlen tik
+rename tik tok
+keys t*k
+keys t?k
+keys *
+rpush items " idly"
+lpush items poori
+lrange items 0 10
+linsert items after idly dosai
+lindex items 5
+rpop items
+zadd staffs 8 prof
+zrevrange staffs 0 -1
+zrevrangebyscore staffs 6 3
+zscore staffs prof
+zincrby staffs 4 prof
+zrange staffs 0 10 withscores
+zremrangebyscore staffs 2 8
+zremrangebyrank staffs 2 8
+
