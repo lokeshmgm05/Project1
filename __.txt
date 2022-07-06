@@ -48,3 +48,11 @@ insert into employee(emp_id int primary key,name text) values (1,'lokesh');
 alter table employee add salary int;
 select * from employee where emp_id=1 allow filtering;
 update employee set salary=800 where emp_id=1;
+
+neo4j:
+
+create(lokesh:person{name:'lokesh', age:18}),(anadearmas:person{name:'ana de armas',age:20})
+create(it:dept{name:'it',strength:23})
+match(a:person),(b:dept) where a.name='lokesh' and b.name='it'
+create(a)- [r:student_of]->(b) return a,b
+match(n:student) return n;
