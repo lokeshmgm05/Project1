@@ -41,5 +41,10 @@ zremrangebyrank staffs 2 8
 
 cassandra:
 
-create keyspace "company" with replication={'class':'SimpleStrategy','replication_factor':1};
-insert 
+create keyspace "company" with replication={'class':'SimpleStrategy','replication_factor':'1'};
+use company;
+create table employee(emp_id int primary key,name text);
+insert into employee(emp_id int primary key,name text) values (1,'lokesh');
+alter table employee add salary int;
+select * from employee where emp_id=1 allow filtering;
+update employee set salary=800 where emp_id=1;
