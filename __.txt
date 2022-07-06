@@ -1,5 +1,13 @@
 MongoDB:
 show dbs
-use db
-
-
+use vehicle
+db.createCollection('cycle')
+db.cars.insertMany([{carname:'bmw',perf:8},{carname:'skoda',perf:5}])
+db.cycle.find()
+db.cars.find({perf:{$gt:5}})
+db.cars.find({$and:[{perf:{$gt:3}},{perf:{$lt:6}}]})
+db.cars.find({$or:[{perf:7},{perf:8}]})
+db.cars.find({perf:{$in:[1,2,3,4,5,6,7,8,9,10]}})
+db.cars.update({perf:{$gt:5}},{$inc:{perf:+5}},{multi:true})
+db.cars.update({perf:{$gt:5}},{$mul:{perf:5}},{multi:true})
+db.cars.update({perf:{$gt:5}},{$set:{perf:5,carname:'benz'}},{multi:true})
