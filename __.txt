@@ -56,3 +56,10 @@ create(it:dept{name:'it',strength:23})
 match(a:person),(b:dept) where a.name='lokesh' and b.name='it'
 create(a)- [r:student_of]->(b) return a,b
 match(n:student) return n;
+match(n1:{course_id:'cse01'})<- [:studies] - (student) return n1,student;
+
+match(n:student) set n.fees=toInteger(n.fees) return n;
+match(n1:student) ,(n2:dept) where n2.dept='cse' and n1.dept='bcd'
+set 1.fees=n1.fees+(0.1*n1.fees);
+
+match(course1:courses{c_is:'cse1'}) set course.cdur=3 return course1;
